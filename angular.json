@@ -25,7 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bulma/css/bulma.css",
+              "src/assets/fontawesome-free-6.4.2-web/css/all.min.css"
             ],
             "scripts": []
           },

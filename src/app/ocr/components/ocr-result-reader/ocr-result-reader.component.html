@@ -1,0 +1,11 @@
+<div class="tile is-parent">
+    <article class="tile is-child notification is-success">
+        <div class="content">
+            <p *ngFor="let result of results">{{ result }}</p>
+        </div>
+        <div *ngIf="results.length === 0" class="typing-loader"></div>
+    </article>
+</div>
+<div class="tile is-parent">
+    <button (click)="copyOutput()" class="button is-info mr-2"><i class="fa-solid fa-copy"></i></button>
+</div>

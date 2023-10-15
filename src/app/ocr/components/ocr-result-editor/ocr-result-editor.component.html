@@ -1,0 +1,29 @@
+<div class="card mb-4" [@visibleHidden]="this.isVisible ? 'visible' : 'hidden'">
+    <div class="card-content">
+        <!-- header options -->
+        <div class="content is-flex is-justify-content-space-around is-align-items-center">
+            <button (click)="moveResultUp()" class="button is-info is-small"><i
+                    class="fa-solid fa-caret-up"></i></button>
+            <div class="tag is-light">{{ index }}</div>
+            <button (click)="moveResultDown()" class="button is-info is-small"><i
+                    class="fa-solid fa-caret-down"></i></button>
+        </div>
+
+        <!-- body -->
+        <div class="columns is-vcentered">
+            <div class="column">
+                <textarea class="textarea" placeholder="Type text" [(ngModel)]="result"
+                    (keyup)="update($event)"></textarea>
+            </div>
+        </div>
+
+        <!-- footer options -->
+        <div class="content">
+            <button (click)="removeLineBreaks()" class="button is-info mr-4"><span>
+                    Remove line
+                    breaks</span></button>
+            <button (click)="copyResult()" class="button is-info mr-4"><i class="fa-solid fa-copy"></i></button>
+            <button (click)="deleteResult()" class="button is-danger mr-4"><i class="fa-solid fa-trash"></i></button>
+        </div>
+    </div>
+</div>

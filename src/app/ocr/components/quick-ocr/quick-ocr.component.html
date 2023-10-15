@@ -1,0 +1,10 @@
+<div class="container has-background-white p-6">
+    <app-ocr-input (uploadedImage)="onUploaded($event)"></app-ocr-input>
+    <app-ocr-output [results]="results"></app-ocr-output>
+</div>
+<div class="modal" [ngClass]="{'is-active': isLoading}">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <progress class="progress is-info" max="100"></progress>
+    </div>
+</div>
