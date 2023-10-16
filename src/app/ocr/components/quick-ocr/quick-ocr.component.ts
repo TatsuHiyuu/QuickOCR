@@ -1,6 +1,8 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { OcrService } from '../../services/ocr.service';
 import { Subject, takeUntil } from 'rxjs';
+import { Language } from '../../interfaces/language';
+import { English, Languages } from '../../models/languages.model';
 
 @Component({
   selector: 'app-quick-ocr',
@@ -10,6 +12,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class QuickOcrComponent implements OnInit, OnDestroy {
   private destroyed: Subject<void> = new Subject();
   results: string[] = [];
+  language: Language = Languages[0];
   isLoading: boolean = false;
 
   constructor(private ocrService: OcrService) { }
@@ -44,8 +47,12 @@ export class QuickOcrComponent implements OnInit, OnDestroy {
     this.scan(blob);
   }
 
+  onLanguageSelected(language: Language): void {
+    this.language = language;
+  }
+
   private scan(blob: File): void {
     this.isLoading = true;
-    this.ocrService.scan(blob).then(() => this.isLoading = false);
+    this.ocrService.scan(this.language, blob).then(() => this.isLoading = false);
   }
 }

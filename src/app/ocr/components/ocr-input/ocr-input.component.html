@@ -1,19 +1,27 @@
 <div class="container has-text-centered">
     <p class="title">Let's get started</p>
-    <p class="subtitle">Select or paste an image to extract its text</p>
+    <p class="subtitle">Choose a language, then choose or paste an image to extract its text</p>
 
-    <div class="file is-boxed is-justify-content-center p-4">
-        <label class="file-label">
-            <input #fileSelector class="file-input" type="file" accept="image/*" name="resume"
-                (change)="uploadFile($event)" (click)="clear()">
-            <span class="file-cta">
-                <span class="file-icon">
-                    <i class="fa-solid fa-file-import"></i>
-                </span>
-                <span class="file-label">
-                    Choose a file…
-                </span>
-            </span>
-        </label>
+    <div class="columns">
+        <div class="column">
+            <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
+        </div>
+
+        <div class="column">
+            <div class="file is-boxed is-justify-content-center p-4">
+                <label class="file-label">
+                    <input #fileSelector class="file-input" type="file" accept="image/*" name="resume"
+                        (change)="uploadFile($event)" (click)="clear()">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fa-solid fa-file-import"></i>
+                        </span>
+                        <span class="file-label">
+                            Choose a file…
+                        </span>
+                    </span>
+                </label>
+            </div>
+        </div>
     </div>
 </div>

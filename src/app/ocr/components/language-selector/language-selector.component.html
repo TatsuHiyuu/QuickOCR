@@ -1,0 +1,12 @@
+<div class="control has-icons-left">
+    <div class="select" (change)="onLanguageSelected($event)">
+        <select>
+            <option *ngFor="let language of languages; index as i" [selected]="i === 0" [value]="i">
+                {{ language.language }}
+            </option>
+        </select>
+        <span class="icon is-small is-left">
+            <span [ngClass]="'fi fi-' + selectedLanguage.alpha2code"></span>
+        </span>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { QuickOcrComponent } from './components/quick-ocr/quick-ocr.component';
 import { OcrInputComponent } from './components/ocr-input/ocr-input.component';
 import { OcrOutputComponent } from './components/ocr-output/ocr-output.component';
 import { FormsModule } from '@angular/forms';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     OcrOutputComponent,
     OcrResultEditorComponent,
     OcrResultReaderComponent,
-    QuickOcrComponent
+    QuickOcrComponent,
+    LanguageSelectorComponent
   ],
   imports: [
     CommonModule,

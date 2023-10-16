@@ -1,5 +1,5 @@
 <div class="container has-background-white p-6">
-    <app-ocr-input (uploadedImage)="onUploaded($event)"></app-ocr-input>
+    <app-ocr-input (uploadedImage)="onUploaded($event)" (languageSelected)="onLanguageSelected($event)"></app-ocr-input>
     <app-ocr-output [results]="results"></app-ocr-output>
 </div>
 <div class="modal" [ngClass]="{'is-active': isLoading}">
