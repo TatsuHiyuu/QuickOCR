@@ -2,7 +2,7 @@
     <p class="title">Let's get started</p>
     <p class="subtitle">Choose a language, then choose or paste an image to extract its text</p>
 
-    <div class="columns">
+    <div class="columns is-vcentered">
         <div class="column">
             <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
         </div>
@@ -21,6 +21,24 @@
                         </span>
                     </span>
                 </label>
+            </div>
+        </div>
+
+        <!-- <div class="column control is-hidden-desktop">
+            <p class="has-icons-left">
+                <input class="is-boxed is-justify-content-center p-4 has-text-centered" type="text"
+                    placeholder="Paste anything here" />
+                <span class="icon is-small is-left">
+                    <i class="fa fa-paste"></i>
+                </span>
+            </p>
+        </div> -->
+        <div class="column is-hidden-desktop is-flex is-justify-content-center">
+            <div class="control has-icons-left pasta">
+                <input class="input" placeholder="Paste anything here..." maxlength="0" />
+                <span class="icon is-small is-left">
+                    <i class="fa fa-paste"></i>
+                </span>
             </div>
         </div>
     </div>
