@@ -29,6 +29,8 @@ import { timer } from 'rxjs';
 export class OcrResultEditorComponent implements OnInit {
   @Input() result: string = ''
   @Input() index: number = 0;
+  @Input() isFirst: boolean = false;
+  @Input() isLast: boolean = false;
   @Output() modified: EventEmitter<string> = new EventEmitter<string>();
   @Output() movedUp: EventEmitter<void> = new EventEmitter<void>();
   @Output() deleted: EventEmitter<void> = new EventEmitter<void>();
