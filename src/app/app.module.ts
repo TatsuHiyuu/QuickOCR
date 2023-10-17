@@ -5,10 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { OcrModule } from './ocr/ocr.module';
 import { FormsModule } from '@angular/forms';
+import { TopNavbarComponent } from './core/components/top-navbar/top-navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopNavbarComponent
   ],
   imports: [
     BrowserModule,

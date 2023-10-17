@@ -1,36 +1,56 @@
-<div class="container has-text-centered">
-    <p class="title">Let's get started</p>
-    <p class="subtitle">Choose a language, then choose or paste an image to extract its text</p>
+<nav class="navbar has-background-dark is-justify-content-center">
+    <div class="navbar-item">
+        <div class="field is-grouped">
+            <p class="control">
+                <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
+            </p>
 
-    <div class="columns is-vcentered">
-        <div class="column">
-            <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
-        </div>
-
-        <div class="column">
-            <div class="file is-boxed is-justify-content-center p-4">
+            <p class="control">
                 <label class="file-label">
-                    <input #fileSelector class="file-input" type="file" accept="image/*" name="resume"
-                        (change)="uploadFile($event)" (click)="clear()">
+                    <input #fileSelector class="file-input is-info is-inverted" type="file" accept="image/*"
+                        name="resume" (change)="uploadFile($event)" (click)="clear()">
                     <span class="file-cta">
                         <span class="file-icon">
                             <i class="fa-solid fa-file-import"></i>
                         </span>
                         <span class="file-label">
-                            Choose a file…
+                            Import
                         </span>
                     </span>
                 </label>
-            </div>
-        </div>
+            </p>
 
-        <div class="column is-hidden-desktop is-flex is-justify-content-center">
-            <div class="control has-icons-left pasta">
+            <p class="control">
+                <a class="button is-info is-inverted" target="_blank" href="/">
+                    <span class="icon">
+                        <i class="fa-solid fa-pencil"></i>
+                    </span>
+                    <span>
+                        Edit
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="navbar-item is-hidden-desktop">
+        <div class="field is-grouped">
+            <p class="control">
+                <a class="button is-info is-inverted" target="_blank" href="/">
+                    <span class="icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+                    <span>
+                        Camera
+                    </span>
+                </a>
+            </p>
+
+            <p class="control is-flex is-justify-content-center has-icons-left pasta">
                 <input class="input" placeholder="Paste anything here..." maxlength="0" />
                 <span class="icon is-small is-left">
                     <i class="fa fa-paste"></i>
                 </span>
-            </div>
+            </p>
         </div>
     </div>
-</div>
+</nav>

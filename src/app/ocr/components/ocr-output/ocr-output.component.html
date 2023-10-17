@@ -1,34 +1,36 @@
-<div class="columns">
-    <div class="column">
-        <p class="title">Input</p>
-        <p class="subtitle">Texts retrieved from your images</p>
-        <div class="tile is-parent">
-            <article class="tile is-child notification is-light">
-                <div class="content">
-                    <div *ngFor="let result of results; index as i; trackBy: trackByFn">
-                        <app-ocr-result-editor [result]="result" [index]="i" [isFirst]="i === 0"
-                            [isLast]="i === results.length - 1" (modified)="updateResult(i, $event)"
-                            (movedUp)="moveResultUp(i)" (deleted)="deleteResult(i)"
-                            (movedDown)="moveResultDown(i)"></app-ocr-result-editor>
+<div class="columns p-6">
+    <div class="tile is-ancestor">
+        <div class="column">
+            <p class="title">Input</p>
+            <p class="subtitle">Texts retrieved from your images</p>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-light">
+                    <div class="content">
+                        <div *ngFor="let result of results; index as i; trackBy: trackByFn">
+                            <app-ocr-result-editor [result]="result" [index]="i" [isFirst]="i === 0"
+                                [isLast]="i === results.length - 1" (modified)="updateResult(i, $event)"
+                                (movedUp)="moveResultUp(i)" (deleted)="deleteResult(i)"
+                                (movedDown)="moveResultDown(i)"></app-ocr-result-editor>
+                        </div>
+                        <div *ngIf="results.length === 0">
+                            <article class="message is-warning">
+                                <div class="message-body">
+                                    <p>No input provided yet.</p>
+                                    <p>Please, add an image to get started.</p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div *ngIf="results.length === 0">
-                        <article class="message is-warning">
-                            <div class="message-body">
-                                <p>No input provided yet.</p>
-                                <p>Please, add an image to get started.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
 
-    </div>
-    <div class="column">
-        <p class="title">Output</p>
-        <p class="subtitle">Combination of your inputs</p>
-        <div>
-            <app-ocr-result-reader [results]="results"></app-ocr-result-reader>
+        </div>
+        <div class="column">
+            <p class="title">Output</p>
+            <p class="subtitle">Combination of your inputs</p>
+            <div>
+                <app-ocr-result-reader [results]="results"></app-ocr-result-reader>
+            </div>
         </div>
     </div>
 </div>

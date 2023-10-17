@@ -10,6 +10,7 @@ export class OcrInputComponent {
   @ViewChild('fileSelector') fileSelector: ElementRef | undefined;
   @Output() uploadedImage: EventEmitter<File> = new EventEmitter<File>();
   @Output() languageSelected: EventEmitter<Language> = new EventEmitter<Language>();
+  selectedLanguage: Language | undefined;
 
   uploadFile(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
@@ -25,6 +26,7 @@ export class OcrInputComponent {
   }
 
   onLanguageSelected(language: Language): void {
+    this.selectedLanguage = language;
     this.languageSelected.emit(language);
   }
 }

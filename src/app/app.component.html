@@ -1,57 +1,39 @@
-<section class="hero is-info">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item">
-                        <!-- Logo -->
-                    </a>
-                    <span class="navbar-burger" data-target="navbarMenuHeroB">
-                        <span>
-                        </span>
-                        <span>
-                        </span>
-                    </span>
-                </div>
-                <div id="navbarMenuHeroB" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item">
-                            Documentation
-                        </a>
-                        <span class="navbar-item">
-                            <a class="button is-info is-inverted">
-                                <span class="icon">
-                                    <i class="fab fa-github"></i>
-                                </span>
-                                <span>Download</span>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <p class="title">
-                Quick OCR
-            </p>
-            <p class="subtitle">
-                Extract text from your images
-            </p>
-        </div>
-    </div>
-</section>
+<header class="hero-head">
+    <app-top-navbar></app-top-navbar>
+</header>
 
 <body class="has-background-light">
     <app-quick-ocr></app-quick-ocr>
 </body>
 
-<footer class="footer">
+<footer class="footer has-background-dark has-text-light">
     <div class="content has-text-centered">
         <p>
-            <strong>Quick OCR</strong> by <a href="https://github.com/TatsuHiyuu">TatsuHiyuu</a>
+            <strong class="has-text-light">QuickOCR</strong> by <a href="https://github.com/TatsuHiyuu">TatsuHiyuu</a>
         </p>
+
+        <div class="tags has-addons is-flex is-justify-content-center">
+            <a href="https://angular.io/" target="_blank">
+
+                <span class="tag">Made with</span>
+                <span class="tag is-danger">Angular</span>
+            </a>
+        </div>
+
+        <div class="tags has-addons is-flex is-justify-content-center">
+            <a href="https://bulma.io//" target="_blank">
+
+                <span class="tag">Prettified by</span>
+                <span class="tag is-primary">Bulma</span>
+            </a>
+        </div>
+
+        <div class="tags has-addons is-flex is-justify-content-center">
+            <a href="https://github.com/naptha/tesseract.js" target="_blank">
+
+                <span class="tag">Powered by</span>
+                <span class="tag is-warning">Tesseract</span>
+            </a>
+        </div>
     </div>
 </footer>
