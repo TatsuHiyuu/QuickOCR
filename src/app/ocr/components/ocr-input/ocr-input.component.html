@@ -8,7 +8,7 @@
             <p class="control">
                 <label class="file-label">
                     <input #fileSelector class="file-input is-info is-inverted" type="file" accept="image/*"
-                        name="resume" (change)="uploadFile($event)" (click)="clear()">
+                        capture="environment" name="resume" (change)="uploadFile($event)" (click)="clear()">
                     <span class="file-cta">
                         <span class="file-icon">
                             <i class="fa-solid fa-file-import"></i>
@@ -19,32 +19,10 @@
                     </span>
                 </label>
             </p>
-
-            <p class="control">
-                <a class="button is-info is-inverted" target="_blank" href="/">
-                    <span class="icon">
-                        <i class="fa-solid fa-pencil"></i>
-                    </span>
-                    <span>
-                        Edit
-                    </span>
-                </a>
-            </p>
         </div>
     </div>
     <div class="navbar-item is-hidden-desktop">
         <div class="field is-grouped">
-            <p class="control">
-                <a class="button is-info is-inverted" target="_blank" href="/">
-                    <span class="icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </span>
-                    <span>
-                        Camera
-                    </span>
-                </a>
-            </p>
-
             <p class="control is-flex is-justify-content-center has-icons-left pasta">
                 <input class="input" placeholder="Paste anything here..." maxlength="0" />
                 <span class="icon is-small is-left">

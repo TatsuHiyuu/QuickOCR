@@ -1,3 +1,3 @@
 export enum Languages {
-    eng = 'English'
+    english = 'English'
 }
