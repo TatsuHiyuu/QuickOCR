@@ -2,10 +2,6 @@
     <div class="navbar-item">
         <div class="field is-grouped">
             <p class="control">
-                <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
-            </p>
-
-            <p class="control">
                 <label class="file-label">
                     <input #fileSelector class="file-input is-info is-inverted" type="file" accept="image/*"
                         capture="environment" name="resume" (change)="uploadFile($event)" (click)="clear()">
@@ -36,9 +32,13 @@
             </p>
         </div>
     </div>
-    <div class="navbar-item is-hidden-desktop">
+    <div class="navbar-item">
         <div class="field is-grouped">
-            <p class="control is-flex is-justify-content-center has-icons-left pasta">
+            <p class="control">
+                <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
+            </p>
+
+            <p class="control is-flex is-justify-content-center has-icons-left pasta is-hidden-desktop">
                 <input class="input" placeholder="Paste anything here..." maxlength="0" />
                 <span class="icon is-small is-left">
                     <i class="fa fa-paste"></i>
