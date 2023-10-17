@@ -19,6 +19,21 @@
                     </span>
                 </label>
             </p>
+
+            <p *ngIf="isCameraAvailable" class="control">
+                <label class="file-label">
+                    <input #fileSelector class="file-input is-info is-inverted" type="file" accept="image/*"
+                        name="resume" (change)="uploadFile($event)" (click)="clear()">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fa-solid fa-camera"></i>
+                        </span>
+                        <span class="file-label">
+                            Camera
+                        </span>
+                    </span>
+                </label>
+            </p>
         </div>
     </div>
     <div class="navbar-item is-hidden-desktop">
